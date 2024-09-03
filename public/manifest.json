@@ -1,1 +1,67 @@
-{"theme_color":"#8936FF","background_color":"#2EC6FE","icons":[{"purpose":"maskable","sizes":"512x512","src":"icon512_maskable.png","type":"image/png"},{"purpose":"any","sizes":"512x512","src":"icon512_rounded.png","type":"image/png"}],"orientation":"portrait","display":"standalone","dir":"auto","lang":"en-US","name":"Olasunkanmi IDRIS","short_name":"OlaidriOlaIdris ","start_url":"https://olaidris.com","scope":"olaidris.com/home","description":"Olasunkanmi Idris Portfolio","id":"olasunkanmi167890"}
+{
+  "name": "Olasunkanmi Idris | Software Engineer",
+  "short_name": "OlaIdris",
+  "description": "Olasunkanmi Idris's personal portfolio showcasing his expertise as a software engineer. Dive into his experience, projects, and skills.",
+  "theme_color": "#F3B61F",
+  "background_color": "#04080F",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/?source=pwa",
+  "icons": [
+    {
+      "src": "/icons/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "16x16 32x32"
+    },
+    { "src": "/icons/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icons/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    {
+      "src": "/icons/icon-192-maskable.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshots/web.png",
+      "sizes": "1920x1080",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en-US",
+  "categories": ["portfolio", "software engineering"],
+  "id": "com.olasunkanmi.portfolio",
+
+  "protocol_handlers": [
+    {
+      "protocol": "mailto",
+      "url": "mailto:olaidris15@gmail.com"
+    },
+    {
+      "protocol": "tel",
+      "url": "tel:+2348105410146"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Olasunkanmi Idris",
+      "email": "olaidris15@gmail.com",
+      "phone": "+2348105410146",
+      "github": "https://github.com/kanmi-idris",
+      "linkedin": "https://linkedin.com/in/olaidris"
+    }
+  ]
+}
