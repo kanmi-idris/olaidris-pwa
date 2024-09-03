@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
@@ -8,12 +8,16 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#04080F",
+};
+
 export const metadata: Metadata = {
   title: "Olasunkanmi Idris | Software Engineer",
   description:
     "Olasunkanmi Idris's personal portfolio showcasing his expertise as a software engineer. Dive into his experience, projects, and skills.",
   manifest: "/manifest.json",
-  themeColor: "#04080F",
+  // themeColor: "#04080F",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

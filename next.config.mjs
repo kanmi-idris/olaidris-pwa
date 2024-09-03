@@ -10,8 +10,8 @@ const withPWA = nextPWA({
 });
 
 const nextConfig = {
-  reactStrictMode: false,
-  swcMinify: false,
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 export default withPWA(nextConfig);
