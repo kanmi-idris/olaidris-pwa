@@ -1,5 +1,10 @@
+import { populateDexieDB } from "@/app/api/controllers";
+import { useServiceWorker } from "@/app/hooks/useServiceWorker";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
+
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -67,6 +72,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useServiceWorker();
+  populateDexieDB();
+
   return (
     <html lang="en">
       <head>
@@ -76,7 +84,11 @@ export default function RootLayout({
         <meta name="msapplication-tap-highlight" content="no" />
         <link rel="shortcut icon" href="/icons/favicon.ico" />
       </head>
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        {children}
+        <SpeedInsights />
+        <Analytics />
+      </body>
     </html>
   );
 }

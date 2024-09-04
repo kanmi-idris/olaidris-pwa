@@ -63,5 +63,6 @@
       "github": "https://github.com/kanmi-idris",
       "linkedin": "https://linkedin.com/in/olaidris"
     }
-  ]
+  ],
+  "offline_enabled": true
 }
