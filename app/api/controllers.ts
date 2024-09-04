@@ -4,7 +4,7 @@ export async function populateDexieDB() {
   console.log("[Service Worker] Populating Dexie DB...");
   try {
     // Fetch data from backend
-    const response = await fetch("/api/data"); // Adjust endpoint as necessary
+    const response = await fetch("/api/data");
     const data = await response.json();
 
     // Assuming the data is an object with keys corresponding to the table names

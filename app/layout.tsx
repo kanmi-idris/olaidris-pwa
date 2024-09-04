@@ -1,5 +1,4 @@
 import { populateDexieDB } from "@/app/api/controllers";
-import { useServiceWorker } from "@/app/hooks/useServiceWorker";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
@@ -72,7 +71,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useServiceWorker();
+  // useServiceWorker();
   populateDexieDB();
 
   return (
