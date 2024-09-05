@@ -12,6 +12,9 @@ const withPWA = nextPWA({
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
 };
 
 export default withPWA(nextConfig);

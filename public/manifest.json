@@ -44,17 +44,6 @@
   "lang": "en-US",
   "categories": ["portfolio", "software engineering"],
   "id": "com.olasunkanmi.portfolio",
-
-  "protocol_handlers": [
-    {
-      "protocol": "mailto",
-      "url": "mailto:olaidris15@gmail.com"
-    },
-    {
-      "protocol": "tel",
-      "url": "tel:+2348105410146"
-    }
-  ],
   "contacts": [
     {
       "name": "Olasunkanmi Idris",

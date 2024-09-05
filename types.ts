@@ -1,5 +1,5 @@
 export interface ICertificate {
-  id?: number;
+  _id?: string;
   sponsor: string;
   title: string;
   awarding_date: Date;
@@ -8,7 +8,7 @@ export interface ICertificate {
 }
 
 export interface IEducation {
-  id?: number;
+  _id?: string;
   school: string;
   programme: string;
   location: {
@@ -23,7 +23,7 @@ export interface IEducation {
 }
 
 export interface IExperience {
-  id?: number;
+  _id?: string;
   company: string;
   location: {
     state: string;
@@ -65,7 +65,7 @@ export interface IDecision {
 }
 
 export interface IProject {
-  id?: number;
+  _id?: string;
   project_name: string;
   project_date: string;
   project_uri: string;
@@ -73,10 +73,33 @@ export interface IProject {
 }
 
 export interface IAccolade {
-  id?: number;
+  _id?: string;
   name: string;
   accolade: string;
   date_received: Date;
   source_platform_logo?: string;
   source_uri?: string;
 }
+
+export interface IUpload {
+  _id: string;
+  type: string;
+  uri: string;
+  filename: string;
+}
+
+export type DataType =
+  | "experiences"
+  | "education"
+  | "certification"
+  | "accolades"
+  | "projects"
+  | "uploads";
+
+export type DataItem =
+  | IExperience
+  | IEducation
+  | ICertificate
+  | IAccolade
+  | IProject
+  | IUpload;

@@ -1,10 +1,14 @@
-import { populateDexieDB } from "@/app/api/controllers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 
+import dynamic from "next/dynamic";
+import Providers from "./api/providers";
 import "./globals.css";
+
+// Dynamically import the client component with SSR disabled
+const PopulateDexie = dynamic(() => import("./hooks/useDexie"), { ssr: false });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -71,9 +75,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // useServiceWorker();
-  populateDexieDB();
-
   return (
     <html lang="en">
       <head>
@@ -84,7 +85,10 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/icons/favicon.ico" />
       </head>
       <body className={montserrat.className}>
-        {children}
+        <Providers>
+          {children}
+          <PopulateDexie />
+        </Providers>
         <SpeedInsights />
         <Analytics />
       </body>
