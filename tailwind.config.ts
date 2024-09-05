@@ -11,14 +11,20 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-montserrat)", "sans-serif"],
       },
+      colors: {
+        base: "#04080F",
+        accent: "#F3B61F",
+        offWhite: "#FFFCFF",
+        Emphasis: "#813405",
+        Gray: "8C8B89",
+        BlacK_9: "#C6C6C6",
+        Black_8: "#C6C6C6",
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        OraYel: "linear-gradient(to right, #F3B61F, #813405)",
       },
     },
   },
-  plugins: [],
 };
 
 export default config;

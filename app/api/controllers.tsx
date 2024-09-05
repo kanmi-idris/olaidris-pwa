@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:5000";
 
 async function fetchFromServer(type: DataType): Promise<DataItem[]> {
-  console.log(`[Server] Fetching ${BASE_URL}/api/${type}...`);
+  // console.log(`[Server] Fetching ${BASE_URL}/api/${type}...`);
 
   try {
     const response = await fetch(`${BASE_URL}/api/${type}`);
@@ -123,12 +123,12 @@ export async function populateDexieDB() {
 
       if (toUpdate.length > 0) {
         await table.bulkPut(toUpdate);
-        console.log(`${toUpdate.length} items updated in ${type} table`);
+        // console.log(`${toUpdate.length} items updated in ${type} table`);
       }
 
       if (toDelete.length > 0) {
         await table.bulkDelete(toDelete.map((item) => item._id));
-        console.log(`${toDelete.length} items deleted from ${type} table`);
+        // console.log(`${toDelete.length} items deleted from ${type} table`);
       }
     }
   } catch (error) {
