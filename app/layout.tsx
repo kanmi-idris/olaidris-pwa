@@ -12,8 +12,6 @@ const PopulateDexie = dynamic(() => import("./hooks/useDexie"), { ssr: false });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-montserrat",
 });
 
 export const viewport: Viewport = {

@@ -6,3 +6,59 @@ body {
   color: #c6c6c6;
   background: #04080f;
 }
+
+.blur {
+  filter: blur(5px);
+  transition: filter 0.3s ease-in;
+}
+
+.remove-blur {
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #f3b61f 0%, #813405 100%);
+
+  /* Add vendor prefixes for compatibility */
+  -webkit-background-clip: text; /* For Chrome, Safari, iOS, and older browsers */
+  background-clip: text; /* Standard property */
+
+  -webkit-text-fill-color: transparent; /* For Chrome and Safari to make text transparent */
+  color: transparent;
+}
+
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}

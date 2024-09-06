@@ -16,7 +16,7 @@ const config: Config = {
         accent: "#F3B61F",
         offWhite: "#FFFCFF",
         Emphasis: "#813405",
-        Gray: "8C8B89",
+        Gray: "#8C8B89",
         BlacK_9: "#C6C6C6",
         Black_8: "#C6C6C6",
       },
