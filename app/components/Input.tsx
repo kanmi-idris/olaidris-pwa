@@ -51,7 +51,7 @@ const ContactInput = () => {
     >
       <div
         className={`flex justify-between items-center rounded-3xl border ${
-          isFocused ? "border-accent" : "border-Gray"
+          isFocused ? "border-Black_8" : "border-Gray"
         } px-4 w-full transition-colors duration-300`}
       >
         <textarea
