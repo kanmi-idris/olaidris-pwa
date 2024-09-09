@@ -76,7 +76,12 @@ import { registerRoute } from "workbox-routing";
 import { CacheFirst, StaleWhileRevalidate } from "workbox-strategies";
 
 // Precache and route static assets
-precacheAndRoute(self.__WB_MANIFEST);
+try {
+  console.log("Manifest:", self.__WB_MANIFEST);
+  precacheAndRoute(self.__WB_MANIFEST);
+} catch (error) {
+  console.error("Precaching failed:", error);
+}
 
 // Cache page navigations with a Cache First strategy
 registerRoute(
