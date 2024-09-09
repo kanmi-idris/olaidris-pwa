@@ -75,22 +75,44 @@ const DesktopHero = () => {
               Software Engineer
             </h3>
           </div>
-          <p className={`w-auto h-full text-Black_9`}>
-            Hey there! 👋 it’s your friendly neighborhood software engineer! 🚀
+          <p className="w-auto h-full text-Black_9">
+            Hey there!{" "}
+            <picture className="inline-block align-text-bottom">
+              <source
+                srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp"
+                type="image/webp"
+              />
+              <img
+                src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif"
+                alt="👋"
+                width="16"
+                height="16"
+              />
+            </picture>{" "}
+            I am him! Your team&apos;s missing rib{" "}
+            <picture className="inline-block align-text-bottom">
+              <source
+                srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/512.webp"
+                type="image/webp"
+              />
+              <img
+                src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/512.gif"
+                alt="😂"
+                width="16"
+                height="16"
+              />
+            </picture>{" "}
             In my previous role, I helped conjure up a fintech app that now
-            boasts&nbsp;
-            <span className="text-accent">5000+ users</span>
-            &nbsp;and a&nbsp;
-            <span className="text-accent">stellar 4.3 Appstore rating</span>
-            . ✨
+            boasts <span className="text-accent">5000+ users</span> and a{" "}
+            <span className="text-accent">stellar 4.3 Appstore rating</span>. ✨
             <br />
             <br />
-            Fast-forward to my current role: I’m the proud guardian of&nbsp;five
-            AWS instances&nbsp;(yes, I count them like a proud plant parent 🌿).
-            My secret sauce?&nbsp;Performance optimization magic! I waved my
-            wand (okay, it was more like a keyboard) and&nbsp;
+            Fast-forward to my current role: I&apos;m the proud guardian of five
+            AWS instances (yes, I count them like a proud plant parent 🌿). My
+            secret sauce? Performance optimization magic! I waved my wand (okay,
+            it was more like a keyboard) and{" "}
             <span className="text-accent">
-              slashed server downtime by a whopping&nbsp;25%
+              slashed server downtime by a whopping 25%
             </span>
             . 🧙‍♂️
           </p>
