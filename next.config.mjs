@@ -12,7 +12,7 @@ const withPWA = nextPWA({
   reloadOnOnline: true,
   cacheOnFrontEndNav: true,
   customWorkerDir: "worker", // This tells next-pwa where to find the custom worker
-  buildExcludes: [/middleware-manifest.json$/, /\.map$/, /^workbox-(.)*\.js$/],
+  // buildExcludes: [/middleware-manifest.json$/, /\.map$/, /^workbox-(.)*\.js$/],
 });
 
 const nextConfig = {
