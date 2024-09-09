@@ -5,6 +5,13 @@ import { toast } from "sonner";
 
 export default function OfflineHandler() {
   useEffect(() => {
+    // Register the service worker
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js");
+      });
+    }
+
     function handleOnline() {
       toast.success("You are online.");
     }

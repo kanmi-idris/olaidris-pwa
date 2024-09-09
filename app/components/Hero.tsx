@@ -89,7 +89,19 @@ const MobileHero = () => {
           <span className="text-accent">
             fully accessible to both the blind and deaf
           </span>
-          . Inclusivity, FTW! 💪
+          . Inclusivity, FTW!
+          <picture>
+            <source
+              srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4aa/512.webp"
+              type="image/webp"
+            />
+            <img
+              src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4aa/512.gif"
+              alt="💪"
+              width="16"
+              height="16"
+            />
+          </picture>
           <br /> <br />
           Beyond tech, I’ve got a versatile approach that lets me lead projects,
           adapt to new challenges, and deliver cross-platform solutions (from
