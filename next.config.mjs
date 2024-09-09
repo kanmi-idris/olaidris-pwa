@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 import nextPWA from "next-pwa";
 
+console.log("loading the next config");
+
 const withPWA = nextPWA({
   dest: "public",
   register: true,
@@ -9,6 +11,7 @@ const withPWA = nextPWA({
   fallbacks: {
     document: "/offline",
   },
+  scope: "/",
   reloadOnOnline: true,
   cacheOnFrontEndNav: true,
   customWorkerDir: "worker", // This tells next-pwa where to find the custom worker

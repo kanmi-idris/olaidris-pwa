@@ -132,7 +132,7 @@ const DesktopHero = () => {
   const [isLoadingIntro, setIsLoadingIntro] = useState(true);
 
   useEffect(() => {
-    console.log("Component mounted, setting isLoadingIntro to false");
+    // console.log("Component mounted, setting isLoadingIntro to false");
     setIsLoadingIntro(false);
   }, []);
 
