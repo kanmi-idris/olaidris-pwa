@@ -6,8 +6,8 @@
   "background_color": "#04080F",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/",
   "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/icons/favicon.ico",

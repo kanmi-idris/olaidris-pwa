@@ -28,6 +28,15 @@ export const metadata: Metadata = {
     "Olasunkanmi Idris's personal portfolio showcasing his expertise as a software engineer. Dive into his experience, projects, and skills.",
   manifest: "/manifest.json",
   // themeColor: "#04080F",
+  authors: [
+    { name: "Olasunkanmi IDRIS" },
+    {
+      name: "Olasunkanmi IDRIS",
+      url: "https://linkedin.com/in/olaidris",
+    },
+  ],
+  viewport:
+    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
