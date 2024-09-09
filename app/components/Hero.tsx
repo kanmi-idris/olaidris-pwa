@@ -5,6 +5,7 @@ import "../globals.css";
 import BrandsLine from "./BrandsLine";
 import ContactInput from "./Input";
 import NavigationBar from "./NavigationBar";
+import SectionTitle from "./SectionTitle";
 
 const MobileHero = () => {
   const [isImageLoading, setImageLoading] = useState(true);
@@ -33,6 +34,83 @@ const MobileHero = () => {
         <ContactInput />
         <NavigationBar />
       </div>
+      <section className="px-5 gap-5 flex flex-col justify-start items-center mt-10 pb-52">
+        <SectionTitle variant="underlined" title="Who am I" />
+        <p className="w-auto h-full text-Black_8 text-center">
+          Hey there!{" "}
+          <picture className="inline-block align-text-bottom">
+            <source
+              srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp"
+              type="image/webp"
+            />
+            <img
+              src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif"
+              alt="👋"
+              width="16"
+              height="16"
+            />
+          </picture>{" "}
+          I am him—your team’s missing rib!{" "}
+          <picture className="inline-block align-text-bottom">
+            <source
+              srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/512.webp"
+              type="image/webp"
+            />
+            <img
+              src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/512.gif"
+              alt="😂"
+              width="16"
+              height="16"
+            />
+          </picture>{" "}
+          <br />
+          <br />
+          In my previous role, I helped build a thrift management web app and
+          was the proud guardian of{" "}
+          <span className="text-accent">five (5) AWS instances</span> (yes, I
+          count them like a proud plant parent 🌿).
+          <br />
+          <br /> My secret sauce? Performance optimization magic! I waved my
+          wand (okay, more like a keyboard) and{" "}
+          <span className="text-accent">
+            slashed server downtime by a whopping 25%
+          </span>
+          <br />
+          <br />
+          But wait, there’s more! I also built a{" "}
+          <span className="text-accent">CI/CD pipeline</span> that made
+          deployment times shrink faster than ice cream melting in the summer
+          heat. 🍦✨
+          <br />
+          <br />
+          Fast-forward to my current role: I’m building an EduTech mobile app
+          tailored to work in 5+ languages, complete with voice readout
+          functionality, and the best part? It’s{" "}
+          <span className="text-accent">
+            fully accessible to both the blind and deaf
+          </span>
+          . Inclusivity, FTW! 💪
+          <br /> <br />
+          Beyond tech, I’ve got a versatile approach that lets me lead projects,
+          adapt to new challenges, and deliver cross-platform solutions (from
+          macOS to Android and Web) that boost revenue and leave customers
+          smiling.
+          <br />
+          <br />
+          When I’m not coding, you’ll probably catch me binge-watching movies,
+          diving down YouTube rabbit holes for the latest tech trends, Praying
+          or gisting with my babe about everything and nothing. 🎬💻
+          #MyHeartBeatsForHer ❤️
+          <br />
+          <br />
+          <span className="text-accent"> Case in point: </span> I bring both
+          leadership and hands-on technical skills across mobile, web, UI/UX,
+          and cloud. My adaptability means I can help your team scale quickly
+          and efficiently. Together, we’ll turn your goals into high-performance
+          solutions that delight users. Let’s make{" "}
+          <span className="text-strikethrough">babies</span> magic! ✨
+        </p>
+      </section>
     </div>
   );
 };
@@ -121,6 +199,9 @@ const DesktopHero = () => {
         <NavigationBar />
       </div>
       <BrandsLine />
+      <section className="max-w-6xl mx-auto gap-10 flex flex-col justify-start items-center mt-24">
+        <SectionTitle variant="underlined" title="Who am I" />
+      </section>
     </section>
   );
 };
