@@ -1,3 +1,4 @@
+/** @type {import('next').NextConfig} */
 import nextPWA from "next-pwa";
 
 const withPWA = nextPWA({
@@ -5,10 +6,15 @@ const withPWA = nextPWA({
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === "development",
-  sw: "/custom-sw.js",
+  fallbacks: {
+    document: "/offline",
+  },
+  reloadOnOnline: true,
+  cacheOnFrontEndNav: true,
+  customWorkerDir: "worker", // This tells next-pwa where to find the custom worker
+  buildExcludes: [/middleware-manifest.json$/, /\.map$/, /^workbox-(.)*\.js$/],
 });
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,

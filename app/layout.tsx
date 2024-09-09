@@ -4,11 +4,15 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 
 import dynamic from "next/dynamic";
+import { Toaster } from "sonner";
 import Providers from "./api/providers";
 import "./globals.css";
 
-// Dynamically import the client component with SSR disabled
+// Dynamically import the client components with SSR disabled
 const PopulateDexie = dynamic(() => import("./hooks/useDexie"), { ssr: false });
+const OfflineHandler = dynamic(() => import("./offline/OfflineIndicator"), {
+  ssr: false,
+});
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -86,6 +90,8 @@ export default function RootLayout({
         <Providers>
           {children}
           <PopulateDexie />
+          <Toaster position="top-center" richColors />
+          <OfflineHandler />
         </Providers>
         <SpeedInsights />
         <Analytics />
