@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 const ContactInput = () => {
   const [message, setMessage] = useState("");
@@ -7,16 +9,31 @@ const ContactInput = () => {
   const [clickedElement, setClickedElement] = useState<string | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  useEffect(() => {
+  const adjustTextareaHeight = useCallback(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
-  }, [message]);
+  }, []);
+
+  useEffect(() => {
+    adjustTextareaHeight();
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", adjustTextareaHeight);
+      return () => {
+        window.removeEventListener("resize", adjustTextareaHeight);
+      };
+    }
+  }, [adjustTextareaHeight]);
+
+  useEffect(() => {
+    adjustTextareaHeight();
+  }, [message, adjustTextareaHeight]);
 
   const handleClick = (element: string) => {
     setClickedElement(element);
-    setTimeout(() => setClickedElement(null), 300); // Reset after 300ms
+    setTimeout(() => setClickedElement(null), 300);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -47,7 +64,7 @@ const ContactInput = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center gap-x-4 justify-between px-5 pt-4 mb-5"
+      className="flex items-center gap-x-4 justify-between w-full px-5 lg:px-0 pt-4 mb-5"
     >
       <div
         className={`flex justify-between items-center rounded-3xl border ${
@@ -57,19 +74,19 @@ const ContactInput = () => {
         <textarea
           ref={textareaRef}
           value={message}
-          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-            setMessage(e.target.value)
-          }
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+            setMessage(e.target.value);
+          }}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           placeholder="Hi 👋, What do you need me to build?"
-          className="text-Gray text-xs w-[90%] text-ellipsis py-3 outline-none bg-transparent resize-none overflow-hidden"
+          className="text-Gray text-xs w-full text-ellipsis py-3 outline-none bg-transparent resize-none overflow-hidden"
           rows={1}
         />
         <button
           title="microphone"
           type="button"
-          className={`transition-opacity duration-300 hover:opacity-70 ${
+          className={`transition-opacity duration-300 hover:opacity-70 ms-2 ${
             clickedElement === "microphone" ? "opacity-50" : ""
           }`}
           onClick={() => handleClick("microphone")}

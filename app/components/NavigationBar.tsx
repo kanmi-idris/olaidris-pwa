@@ -22,7 +22,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <nav className="flex gap-3 items-center mb-5 px-5 bg-base justify-between">
+    <nav className="flex flex-row lg:flex-col gap-3 lg:gap-6 items-center mb-5 px-5 bg-base lg:justify-start justify-between">
       {channels.map((channel) => {
         const textColor =
           channel.name === "resume" ? "gradient-text" : "text-Gray";

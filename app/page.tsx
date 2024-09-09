@@ -1,9 +1,9 @@
-import Hero from "./components/Hero";
+import ResponsiveHero from "./components/Hero";
 
 export default function Home() {
   return (
     <main className="">
-      <Hero />
+      <ResponsiveHero />
     </main>
   );
 }
