@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 import nextPWA from "next-pwa";
-import runtimeCaching from "next-pwa/cache";
+import runtimeCaching from "next-pwa/cache.js";
 
 const withPWA = nextPWA({
   dest: "public",
