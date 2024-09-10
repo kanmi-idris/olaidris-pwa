@@ -1,4 +1,9 @@
-const withPWA = require("next-pwa")({
+/** @type {import('next').NextConfig} */
+import nextPWA from "next-pwa";
+
+console.log("loading the next config");
+
+const withPWA = nextPWA({
   dest: "public",
   register: true,
   skipWaiting: true,
@@ -6,13 +11,13 @@ const withPWA = require("next-pwa")({
   fallbacks: {
     document: "/offline",
   },
+  scope: "/",
   reloadOnOnline: true,
   cacheOnFrontEndNav: true,
-  customWorkerDir: "worker",
+  customWorkerDir: "worker", // This tells next-pwa where to find the custom worker
   buildExcludes: [/middleware-manifest\.json$/],
 });
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -21,4 +26,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPWA(nextConfig);
+export default withPWA(nextConfig);
