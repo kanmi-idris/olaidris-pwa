@@ -7,6 +7,8 @@ export default function OfflineHandler() {
   useEffect(() => {
     // Register the service worker
     if ("serviceWorker" in navigator) {
+      console.log("log service worker");
+
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("/sw.js");
       });

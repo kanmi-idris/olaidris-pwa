@@ -9,14 +9,7 @@ const withPWA = nextPWA({
   fallbacks: {
     document: "/_offline",
   },
-  scope: "/",
   cacheOnFrontEndNav: true,
-  // customWorkerDir: "worker", // This tells next-pwa where to find the custom worker
-  buildExcludes: [
-    // Exclude server-side files from precaching
-    ({ asset }) =>
-      asset.name.includes("server") || asset.name.includes("middleware"),
-  ],
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
