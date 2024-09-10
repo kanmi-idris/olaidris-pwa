@@ -10,7 +10,7 @@ import "./globals.css";
 
 // Dynamically import the client components with SSR disabled
 const PopulateDexie = dynamic(() => import("./hooks/useDexie"), { ssr: false });
-const OfflineHandler = dynamic(() => import("./_offline/OfflineIndicator"), {
+const OfflineHandler = dynamic(() => import("./~offline/OfflineIndicator"), {
   ssr: false,
 });
 

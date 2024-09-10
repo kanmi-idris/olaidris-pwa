@@ -1,11 +1,17 @@
-import nextPWA from "next-pwa";
+import withPWAInit from "@ducanh2912/next-pwa";
 
-const withPWA = nextPWA({
+const withPWA = withPWAInit({
   dest: "public",
-  register: true,
-  skipWaiting: true,
   disable: process.env.NODE_ENV === "development",
-  sw: "/custom-sw.js",
+  register: true,
+  reloadOnOnline: true,
+  cacheOnFrontEndNav: true,
+  scope: "/",
+  sw: "service-worker.js",
+  fallbacks: {
+    // Failed page requests fallback to this.
+    document: "/~offline",
+  },
 });
 
 /** @type {import('next').NextConfig} */
