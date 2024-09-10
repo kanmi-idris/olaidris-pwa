@@ -76,9 +76,17 @@ import { registerRoute } from "workbox-routing";
 import { CacheFirst, StaleWhileRevalidate } from "workbox-strategies";
 
 // Precache and route static assets
+console.log("Service Worker: Execution started");
+console.log("self.__WB_MANIFEST:", self.__WB_MANIFEST);
+
 try {
-  console.log("Manifest:", self.__WB_MANIFEST);
-  precacheAndRoute(self.__WB_MANIFEST);
+  if (self.__WB_MANIFEST) {
+    console.log("Precaching manifest found. Starting precacheAndRoute()");
+    precacheAndRoute(self.__WB_MANIFEST);
+    console.log("Precaching completed successfully");
+  } else {
+    console.warn("Precache manifest not found. Skipping precacheAndRoute().");
+  }
 } catch (error) {
   console.error("Precaching failed:", error);
 }
