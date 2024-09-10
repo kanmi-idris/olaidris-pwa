@@ -1,18 +1,14 @@
-/** @type {import('next').NextConfig} */
 import nextPWA from "next-pwa";
-import runtimeCaching from "next-pwa/cache.js";
 
 const withPWA = nextPWA({
   dest: "public",
   register: true,
   skipWaiting: true,
-  disable: false,
-  reloadOnOnline: true,
-  cacheOnFrontEndNav: true,
-  buildExcludes: [/middleware-manifest.json$/],
-  runtimeCaching,
+  disable: process.env.NODE_ENV === "development",
+  sw: "/custom-sw.js",
 });
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
