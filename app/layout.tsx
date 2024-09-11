@@ -20,6 +20,10 @@ const montserrat = Montserrat({
 
 export const viewport: Viewport = {
   themeColor: "#04080F",
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -35,8 +39,6 @@ export const metadata: Metadata = {
       url: "https://linkedin.com/in/olaidris",
     },
   ],
-  viewport:
-    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
