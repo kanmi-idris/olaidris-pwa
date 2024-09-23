@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
@@ -18,7 +16,6 @@ const ContactInput = () => {
 
   useEffect(() => {
     adjustTextareaHeight();
-
     if (typeof window !== "undefined") {
       window.addEventListener("resize", adjustTextareaHeight);
       return () => {
@@ -64,10 +61,10 @@ const ContactInput = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center gap-x-4 justify-between w-full px-5 lg:px-0 pt-4 mb-5"
+      className="flex items-end gap-x-4 justify-between w-full px-5 lg:px-0 pt-4 mb-5"
     >
       <div
-        className={`flex justify-between items-center rounded-3xl border ${
+        className={`flex items-end rounded-3xl border ${
           isFocused ? "border-Black_8" : "border-Gray"
         } px-4 w-full transition-colors duration-300`}
       >
@@ -80,13 +77,13 @@ const ContactInput = () => {
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           placeholder="Hi 👋, What do you need me to build?"
-          className="text-Gray text-xs w-full text-ellipsis py-3 outline-none bg-transparent resize-none overflow-hidden"
+          className="bg-transparent text-Black_8 text-xs w-full text-ellipsis py-3 outline-none resize-none overflow-hidden"
           rows={1}
         />
         <button
           title="microphone"
           type="button"
-          className={`transition-opacity duration-300 hover:opacity-70 ms-2 ${
+          className={`transition-opacity duration-300 hover:opacity-70 ms-2 mb-3 ${
             clickedElement === "microphone" ? "opacity-50" : ""
           }`}
           onClick={() => handleClick("microphone")}

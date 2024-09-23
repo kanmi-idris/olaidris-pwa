@@ -44,7 +44,7 @@ const BrandsLine = () => {
   ];
 
   return (
-    <div className="hidden lg:flex items-center justify-between max-w-6xl mx-auto mt-20">
+    <div className="hidden lg:flex items-center justify-between max-w-6xl mx-auto mt-20 px-5">
       {brands.map((brand: Brand) => (
         <Link
           key={brand.name}

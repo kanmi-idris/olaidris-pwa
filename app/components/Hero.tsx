@@ -34,7 +34,7 @@ const MobileHero = () => {
         <ContactInput />
         <NavigationBar />
       </div>
-      <section className="px-5 gap-5 flex flex-col justify-start items-center mt-10 pb-52">
+      <section className="px-5 gap-5 flex flex-col justify-start items-center mt-10 mb-10">
         <SectionTitle variant="underlined" title="Who am I" />
         <p className="w-auto h-full text-Black_8 text-center">
           Hey there!{" "}
@@ -238,7 +238,7 @@ const DesktopHero = () => {
         <NavigationBar />
       </div>
       <BrandsLine />
-      <section className="max-w-6xl mx-auto gap-10 flex flex-col justify-start items-center mt-24">
+      <section className="max-w-6xl mx-auto gap-10 flex flex-col justify-start items-center mt-24 px-5 mb-10 lg:mb-24">
         <SectionTitle variant="underlined" title="Who am I" />
         <p className="w-auto h-full  text-center text-Black_8">
           Hey there!{" "}
