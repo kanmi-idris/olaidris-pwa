@@ -62,3 +62,42 @@ body {
     transform: rotate(0deg);
   }
 }
+
+/* Apply to all scrollbars */
+html,
+body,
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #a8a8a8 #f2f2f2;
+}
+
+/* For webkit-based browsers */
+::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  width: 4px; /* Thinner scrollbar */
+  height: 4px; /* Thinner scrollbar for horizontal scrolling */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a8a8a8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #808080;
+}
+
+.CertificationsAccordion {
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* For Firefox */
+}
+
+.CertificationsAccordion::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  display: none; /* For Chrome, Safari, and Edge */
+}
