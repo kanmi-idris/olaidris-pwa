@@ -57,7 +57,7 @@ const CertificationItem = ({
         type="button"
         className={`w-full py-2 cursor-pointer ${
           isOpen === _id ? "mb-4" : ""
-        } lg:w-[350px] `}
+        } lg:w-[22rem] `}
         onClick={handleClick}
       >
         <div className="flex items-center justify-between">
@@ -89,7 +89,7 @@ const CertificationItem = ({
           isMobile
             ? "overflow-hidden transition-all duration-300 ease-in-out"
             : ""
-        } w-full lg:w-[350px] ${isOpen !== _id ? "" : "mb-4"}`}
+        } w-full lg:w-[22rem] ${isOpen !== _id ? "" : "mb-4"}`}
       >
         <Image
           alt={`${sponsor} ${title} certificate`}
