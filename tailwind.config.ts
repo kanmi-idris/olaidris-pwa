@@ -23,8 +23,8 @@ const config: Config = {
         // Mode specific colors
         dev: {
           bg: "#0a0a0a",
-          text: "#00ff41",
-          accent: "#003B00",
+          text: "#60a5fa", // Blue 400 (Matches Faith/About section)
+          accent: "#1e3a8a", // Blue 900
         },
         eng: {
           bg: "#f0f2f5",

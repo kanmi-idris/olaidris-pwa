@@ -48,7 +48,7 @@ export default function Timeline() {
   return (
     <section className="py-20">
       <div className="max-w-6xl mx-auto mb-10 px-4">
-        <h2 className="text-3xl font-bold mb-2">My Era Tour</h2>
+        <h2 className="text-3xl font-bold mb-2">Highlights</h2>
         <p className="opacity-60">Swipe to travel through time.</p>
       </div>
 
@@ -68,10 +68,12 @@ export default function Timeline() {
 
             <div className="relative z-10 flex flex-col h-full justify-between min-h-[300px]">
               <div>
-                <div className="mb-6 p-3 bg-white/10 w-fit rounded-xl">
+                {/* <div className="mb-6 p-3 bg-white/10 w-fit rounded-xl">
                   {item.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-2 pr-10">{item.title}</h3>
+                </div> */}
+                <h3 className="text-2xl font-bold mb-2 pr-10 mt-20">
+                  {item.title}
+                </h3>
                 <p className="opacity-80 font-mono text-sm">{item.subtitle}</p>
               </div>
 
