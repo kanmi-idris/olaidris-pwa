@@ -1,21 +1,16 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
-
-import dynamic from "next/dynamic";
+import { JetBrains_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import Providers from "./api/providers";
 import "./globals.css";
+import { ModeProvider } from "./components/home/ModeContext";
+import LiquidGlass from "./components/ui/LiquidGlass";
 
-// Dynamically import the client components with SSR disabled
-const PopulateDexie = dynamic(() => import("./hooks/useDexie"), { ssr: false });
-const OfflineHandler = dynamic(() => import("./~offline/OfflineIndicator"), {
-  ssr: false,
-});
-
-const montserrat = Montserrat({
+const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
+  variable: "--font-jetbrains",
 });
 
 export const viewport: Viewport = {
@@ -30,8 +25,6 @@ export const metadata: Metadata = {
   title: "Olasunkanmi Idris | Software Engineer",
   description:
     "Olasunkanmi Idris's personal portfolio showcasing his expertise as a software engineer. Dive into his experience, projects, and skills.",
-  manifest: "/manifest.json",
-  // themeColor: "#04080F",
   authors: [
     { name: "Olasunkanmi IDRIS" },
     {
@@ -39,11 +32,6 @@ export const metadata: Metadata = {
       url: "https://linkedin.com/in/olaidris",
     },
   ],
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "OlaIdris",
-  },
   formatDetection: {
     telephone: false,
   },
@@ -92,17 +80,28 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="application-name" content="OlaIdris" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="msapplication-TileColor" content="#04080F" />
-        <meta name="msapplication-tap-highlight" content="no" />
         <link rel="shortcut icon" href="/icons/favicon.ico" />
+        {/* Import Satoshi from Fontshare CDN */}
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,300,400&display=swap"
+          rel="stylesheet"
+        />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+          :root {
+            --font-satoshi: 'Satoshi', sans-serif;
+          }
+        `,
+          }}
+        />
       </head>
-      <body className={montserrat.className}>
+      <body className={`${jetbrains.variable} font-sans`}>
         <Providers>
-          {children}
-          <PopulateDexie />
-          <Toaster position="top-center" richColors />
-          <OfflineHandler />
+          <ModeProvider>
+            {children}
+            <Toaster position="top-center" richColors />
+          </ModeProvider>
         </Providers>
         <SpeedInsights />
         <Analytics />

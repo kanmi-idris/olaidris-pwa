@@ -77,7 +77,7 @@ const ContactInput = () => {
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           placeholder="Hi 👋, What do you need me to build?"
-          className="bg-transparent text-Black_8 text-xs w-full text-ellipsis py-3 outline-none resize-none overflow-hidden"
+          className=" keyboard-avoiding-input bg-transparent text-Black_8 text-xs w-full text-ellipsis py-3 outline-none resize-none overflow-hidden"
           rows={1}
         />
         <button

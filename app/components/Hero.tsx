@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "../globals.css";
 import BrandsLine from "./BrandsLine";
 import ContactInput from "./Input";
+import { KeyboardAvoidingView } from "./KeyboardAvoidingWrap";
 import NavigationBar from "./NavigationBar";
 import SectionTitle from "./SectionTitle";
 
@@ -30,10 +31,13 @@ const MobileHero = () => {
           priority
         />
       </div>
-      <div className="fixed bottom-0 left-0 z-50 w-full bg-base">
-        <ContactInput />
-        <NavigationBar />
-      </div>
+      <KeyboardAvoidingView>
+        <div className="fixed bottom-0 left-0 z-50 w-full bg-base">
+          <ContactInput />
+          <NavigationBar />
+        </div>
+      </KeyboardAvoidingView>
+
       <section className="px-5 gap-5 flex flex-col justify-start items-center mt-10 mb-10">
         <SectionTitle variant="underlined" title="Who am I" />
         <p className="w-auto h-full text-Black_8 text-center">

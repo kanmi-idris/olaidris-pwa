@@ -1,55 +1,27 @@
-import { getData } from "./api/controllers";
-import Accolades from "./components/Accolades";
-import { CertificationsAccordion } from "./components/accordions/CertificationAccordion";
-import { ExperiencesAccordion } from "./components/accordions/ExperienceAccordion";
-import ResponsiveHero from "./components/Hero";
-import SectionTitle from "./components/SectionTitle";
-import Skills from "./components/Skills";
+import Hero from "./components/home/Hero";
+import Timeline from "./components/home/Timeline";
+import SourceCodeGrid from "./components/home/SourceCodeGrid";
+import UnifiedWorks from "./components/home/UnifiedWorks";
 
-export default async function Home() {
-  const experiences = await getData("experiences");
-  const certifications = await getData("certification");
-  const accolades = await getData("accolades");
-
+export default function Home() {
   return (
-    <main className="pb-16">
-      <ResponsiveHero />
+    <main className="min-h-screen">
+      <Hero />
+      <Timeline />
+      <SourceCodeGrid />
+      <UnifiedWorks />
 
-      <section className="max-w-6xl mx-auto mb-10 lg:mb-24">
-        <SectionTitle variant="circled" title="Experience" />
-        <ExperiencesAccordion items={experiences} />
-      </section>
-
-      <section className="max-w-6xl mx-auto mb-10 lg:mb-24">
-        <SectionTitle variant="underlined" title="My Skills" />
-        <Skills />
-      </section>
-
-      <section className="max-w-6xl mx-auto mb-10 lg:mb-24">
-        <SectionTitle variant="underlined" title="Certifications" />
-        <CertificationsAccordion items={certifications} />
-      </section>
-
-      <section className="max-w-6xl mx-auto mb-10 lg:mb-24">
-        <SectionTitle variant="underlined" title="Accolades" />
-        <Accolades items={accolades} />
-      </section>
-
-      <section className="flex flex-col items-center max-w-6xl mx-auto mb-32 pt-10 lg:mb-24 px-5">
-        <h3 className="mb-5 font-semibold text-offWhite text-center">
-          🚀 Ready to Elevate Your Team?
-        </h3>
-        <p className="mb-5 text-[13.33px] text-center text-Black_9">
-          With my tech sorcery, adaptable mindset, and passion for
-          problem-solving, I’m the wizard your team needs. Let’s create magic
-          together! 🌟
-        </p>
-        <button
-          type="button"
-          className="rounded-lg px-4 py-2 bg-gradient-to-r from-[#f3b61f] to-[#813405] cursor-pointer text-offWhite"
+      {/* Footer / Contact Section */}
+      <section className="py-20 text-center px-6">
+        <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">
+          Let&apos;s build the future.
+        </h2>
+        <a
+          href="mailto:hello@olaidris.com"
+          className="inline-block px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform glass-refraction bg-white/10 text-white border border-white/20 hover:bg-white/20"
         >
-          Contact Me
-        </button>
+          Get in touch
+        </a>
       </section>
     </main>
   );
